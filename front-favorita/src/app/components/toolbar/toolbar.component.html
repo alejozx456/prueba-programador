@@ -1,0 +1,31 @@
+@if(this.username){
+  <mat-toolbar class="toolbar" >
+    <span>Aplicacion Prueba</span>
+    <span class="spacer"></span>
+
+    <button [routerLink]="['/transactions']" mat-flat-button>Consultar Transaccion
+      <mat-icon>search</mat-icon>
+    </button>
+
+    <button (click)="getHome()" mat-flat-button>Pagos
+      <mat-icon>payment</mat-icon>
+    </button>
+
+
+    <span class="spacer"></span>
+
+    @if(username){
+      <button mat-flat-button [matMenuTriggerFor]="menu">{{this.username}}</button>
+      <mat-icon>account_circle</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button (click)="logOut()" mat-menu-item>Cerrar Sesión</button>
+
+      </mat-menu>
+    }
+
+
+
+  </mat-toolbar>
+
+}
+

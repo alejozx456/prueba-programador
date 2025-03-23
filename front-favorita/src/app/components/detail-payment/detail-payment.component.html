@@ -1,0 +1,38 @@
+@if (pagoPluxResponse) {
+  <mat-card class="transaction-card">
+    <mat-card-header>
+      <mat-card-title>Detalle transacción</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="info-section">
+        <h3>Información Cliente</h3>
+        <p><strong>Cliente:</strong> {{pagoPluxResponse.transaction.respuest.cliente.nombres}}</p>
+        <p><strong>Identificación:</strong> {{pagoPluxResponse.transaction.respuest.cliente.numero_identificacion}}</p>
+      </div>
+
+      <div class="info-section">
+        <h3>Información Cobro</h3>
+        <p><strong>Fecha:</strong> {{pagoPluxResponse.transaction.respuest.fecha_transaccion | date:'dd/MM/yyyy'}}</p>
+        <p><strong>Descripción:</strong> {{pagoPluxResponse.transaction.respuest.descripcion}}</p>
+        <p><strong>Voucher:</strong>{{pagoPluxResponse.transaction.respuest.voucher}}</p>
+        <p><strong>Tipo de pago:</strong> {{pagoPluxResponse.transaction.respuest.tipoPago}}</p>
+        <p><strong>Banco:</strong> {{pagoPluxResponse.transaction.respuest.banco}}</p>
+        <p><strong>Lote:</strong> {{pagoPluxResponse.transaction.respuest.numero_lote}}</p>
+        <p><strong>N° tarjeta:</strong> {{pagoPluxResponse.transaction.respuest.detalle.numero_tarjeta}}</p>
+        <p><strong>Banco adquiriente:</strong> {{pagoPluxResponse.transaction.respuest.adquirente}}</p>
+        <p><strong>Tarjeta:</strong> {{pagoPluxResponse.transaction.respuest.marca}}</p>
+        <p><strong>Estado:</strong>{{pagoPluxResponse.transaction.respuest.catalogos.nombre_catalogo}}</p>
+        <p><strong>Monto Total:</strong>{{pagoPluxResponse.transaction.respuest.monto}}</p>
+      </div>
+
+
+    </mat-card-content>
+  </mat-card>
+}@else{
+  <div class="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+}
+
+

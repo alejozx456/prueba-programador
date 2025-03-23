@@ -1,0 +1,55 @@
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.div1 {
+  grid-column: span 3 / span 3;
+  grid-row: span 5 / span 5;
+  background-color: #6200ea;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 30px;
+}
+
+.div2 {
+  grid-column: span 2 / span 2;
+  grid-row: span 5 / span 5;
+  grid-column-start: 4;
+
+
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.login-card {
+  width: 450px;
+  height: 250px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

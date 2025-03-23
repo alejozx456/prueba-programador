@@ -1,0 +1,41 @@
+
+<div class="parent">
+  <div class="div1">
+    <p class="title"><strong>
+      Bienvenido al Sistema de PagoPlux
+    </strong></p>
+  </div>
+  <div class="div2">
+
+    <div class="container">
+      <mat-card class="login-card">
+        <mat-card-title>Inicio de Sesión</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <mat-form-field appearance="fill">
+              <mat-label>Usuario</mat-label>
+              <input matInput formControlName="username" placeholder="Ingresa tu usuario">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" formControlName="password" placeholder="Ingresa tu contraseña">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" >Iniciar sesión</button>
+          </form>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
